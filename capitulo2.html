@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulo II - Celaya: el despertar de una vocación educativa</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link rel="stylesheet" href="lineadeltiempo.css">
+
+<style>
+/* =========================================
+   CAPÍTULO II · MURO DE MEMORIA HISTÓRICA
+   ========================================= */
+
+#muro-pioneros {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(24px, 4vw, 46px);
+    background: #f4f1ea;
+    border-top: 3px solid #a2915f;
+    border-bottom: 1px solid rgba(34, 80, 142, 0.20);
+}
+
+/* Encabezado editorial */
+
+#pioneros-encabezado {
+    max-width: 850px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+#pioneros-encabezado .archivo-etiqueta {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #a2915f;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+}
+
+#pioneros-encabezado h2 {
+    margin: 0 0 18px;
+    color: #22508e;
+    font-size: clamp(1.65rem, 3vw, 2.5rem);
+    line-height: 1.2;
+}
+
+#pioneros-encabezado .archivo-intro {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #343434;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Composición compartida */
+
+#pioneros-archivo {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* Cada maestro forma parte del mismo conjunto */
+
+#pioneros-archivo .pionero {
+    min-width: 0;
+    padding: 22px 18px;
+    background: rgba(255, 255, 255, 0.68);
+    border-top: 2px solid #a2915f;
+    border-bottom: 1px solid rgba(34, 80, 142, 0.18);
+    text-align: center;
+    transition: background-color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+#pioneros-archivo .pionero:hover {
+    background: #ffffff;
+    border-top-color: #22508e;
+}
+
+/* Retratos contenidos: no se recortan */
+
+#pioneros-archivo .pionero-retrato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 145px;
+    margin: 0 auto 20px;
+}
+
+#pioneros-archivo .pionero-retrato img {
+    display: block;
+    max-width: 100%;
+    max-height: 145px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Nombre y semblanza */
+
+#pioneros-archivo .pionero-numero {
+    display: block;
+    margin-bottom: 8px;
+    color: #a2915f;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+#pioneros-archivo .pionero h3 {
+    margin: 0 0 12px;
+    color: #22508e;
+    font-size: 1.12rem;
+    line-height: 1.4;
+}
+
+#pioneros-archivo .pionero p {
+    margin: 0;
+    color: #414141;
+    font-size: 0.91rem;
+    line-height: 1.75;
+}
+
+/* Cierre común del muro */
+
+#pioneros-archivo-cierre {
+    max-width: 800px;
+    margin: 30px auto 0;
+    padding: 22px 12px 0;
+    border-top: 1px solid rgba(162, 145, 95, 0.55);
+    text-align: center;
+    color: #22508e;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* Adaptación a pantallas medianas */
+
+@media (max-width: 800px) {
+    #pioneros-archivo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    #pioneros-archivo .pionero:last-child {
+        grid-column: 1 / -1;
+        width: min(100%, 360px);
+        justify-self: center;
+    }
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 520px) {
+    #muro-pioneros {
+        padding: 25px 14px;
+    }
+
+    #pioneros-archivo {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    #pioneros-archivo .pionero:last-child {
+        grid-column: auto;
+        width: auto;
+    }
+
+    #pioneros-archivo .pionero {
+        display: grid;
+        grid-template-columns: 100px minmax(0, 1fr);
+        align-items: center;
+        gap: 0 16px;
+        padding: 18px 12px;
+        text-align: left;
+    }
+
+    #pioneros-archivo .pionero-retrato {
+        grid-column: 1;
+        grid-row: 1 / span 3;
+        width: 100px;
+        height: 120px;
+        margin: 0;
+    }
+
+    #pioneros-archivo .pionero-retrato img {
+        max-height: 120px;
+    }
+
+    #pioneros-archivo .pionero-numero {
+        grid-column: 2;
+        margin-bottom: 5px;
+    }
+
+    #pioneros-archivo .pionero h3 {
+        grid-column: 2;
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+
+    #pioneros-archivo .pionero p {
+        grid-column: 2;
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #pioneros-archivo .pionero {
+        transition: none;
+    }
+}
+</style>
+
+</head>
+
+	<body>
+
+<div class="container">
+
+	<!-- ============ HERO ============== -->
+	<div class="hero">
+		<div class="hero-text">
+			<h1>Celaya: el despertar de una vocación educativa</h1>
+			<p>1926–1945 · El inicio de una transformación regional</p>
+		</div>
+	</div>
+
+	<!-- ============ INTRODUCCIÓN ============== -->
+	<div class="story-block visible">
+
+		<div class="chapter-title">CAPÍTULO II</div>
+		<p class="big-text">
+			Mientras en Guanajuato se consolidaban estructuras educativas con siglos de historia,
+			en Celaya comenzaba a gestarse un proceso que transformaría el destino académico de la región.
+		</p>
+		<p>
+			No fue un inicio estructurado. Fue una respuesta a la necesidad.
+		</p>
+		<p>
+			Y como muchas historias que comienzan desde abajo, no fueron únicamente las instituciones
+			quienes hicieron posible ese cambio. Fueron las personas.
+		</p>
+	</div>
+
+
+	<!-- =============== 1926 =========== -->
+	<div class="story-block">
+		<h2>1926</h2>
+		<h3>El inicio de la secundaria</h3>
+		<p>
+			El 6 de enero de 1926 abre sus puertas la Escuela Secundaria Oficial
+			“Dr. Francisco Paredes Velasco”.
+		</p>
+		<p>
+			Con 55 alumnos, nace una posibilidad educativa en Celaya.
+		</p>
+	</div>
+	<div class="story-block highlight">
+		<div class="big-text">
+			“Se rompen las cadenas de la ignorancia…”
+		</div>
+	</div>
+
+
+<!-- ========= MURO DE MEMORIA HISTÓRICA ========= -->
+
+<div class="story-block" id="muro-pioneros">
+
+    <header id="pioneros-encabezado">
+
+        <span class="archivo-etiqueta">
+            Memoria histórica · Celaya
+        </span>
+
+        <h2>Los primeros maestros</h2>
+
+        <p class="archivo-intro">
+            Una institución no se construye solamente con aulas.
+            También necesita personas dispuestas a enseñar cuando todavía
+            no existe una tradición consolidada que las respalde.
+        </p>
+
+        <p class="archivo-intro">
+            Los primeros años de esta historia estuvieron acompañados
+            por maestros que participaron en la formación de las primeras
+            generaciones educativas de Celaya.
+        </p>
+
+    </header>
+
+
+    <div id="pioneros-archivo">
+
+        <!-- VICENTE MARTÍNEZ BORJA -->
+
+        <article class="pionero">
+
+            <figure class="pionero-retrato">
+                <img
+                    src="img/martinezborja.webp"
+                    alt="Lic. Vicente Martínez Borja"
+                    loading="lazy">
+            </figure>
+
+            <span class="pionero-numero">01 · LOS PIONEROS</span>
+
+            <h3>Lic. Vicente Martínez Borja</h3>
+
+            <p>
+                Maestro vinculado a los primeros años de la formación
+                profesional en Celaya y al impulso de la carrera de
+                Contador Privado en 1933.
+            </p>
+
+        </article>
+
+
+        <!-- JOSÉ LANUZA -->
+
+        <article class="pionero">
+
+            <figure class="pionero-retrato">
+                <img
+                    src="img/joselanuza.webp"
+                    alt="José Lanuza"
+                    loading="lazy">
+            </figure>
+
+            <span class="pionero-numero">02 · LOS PIONEROS</span>
+
+            <h3>José Lanuza</h3>
+
+            <p>
+                Uno de los primeros maestros vinculados con la formación
+                de las primeras generaciones educativas de Celaya.
+            </p>
+
+        </article>
+
+
+        <!-- REYNALDO ALCOCER -->
+
+        <article class="pionero">
+
+            <figure class="pionero-retrato">
+                <img
+                    src="img/reynaldoalcocer.webp"
+                    alt="Reynaldo Alcocer"
+                    loading="lazy">
+            </figure>
+
+            <span class="pionero-numero">03 · LOS PIONEROS</span>
+
+            <h3>Reynaldo Alcocer</h3>
+
+            <p>
+                Parte del grupo de primeros maestros que participaron
+                en la formación de las primeras generaciones
+                de estudiantes en Celaya.
+            </p>
+
+        </article>
+
+    </div>
+
+    <div id="pioneros-archivo-cierre">
+        Antes de que existiera una estructura universitaria consolidada,
+        ya existía una comunidad de maestros formando generaciones.
+    </div>
+</div>
+	<!-- ========= PROFESIONALIZACIÓN ========= -->
+	<div class="story-block">
+		<h2>1933–1943</h2>
+		<h3>Primeros pasos hacia la profesionalización</h3>
+		<p>
+			La educación en Celaya comienza a ampliar sus horizontes.
+			Se crea la carrera de Contador Privado y surge también la formación
+			en enfermería.
+		</p>
+		<p>
+			La enseñanza deja de concentrarse únicamente en la educación básica
+			y comienza a preparar a los jóvenes para incorporarse a una vida
+			profesional.
+		</p>
+	</div>
+
+	<!-- ========= FOTO SECUNDARIA ========= -->
+	<div class="story-block photo-frame">
+		<img src="img/secundaria_1926.webp"
+			 alt="Escuela secundaria de Celaya">
+		<div class="photo-caption">
+			<strong>Los primeros espacios de formación</strong>
+			La Escuela Secundaria Oficial se convirtió en uno de los puntos
+			de partida para la expansión de la enseñanza en Celaya.
+		</div>
+	</div>
+
+	<!-- =========  ENFERMERÍA ========= -->
+	<div class="story-block">
+		<h2>1939</h2>
+		<h3>La formación en enfermería</h3>
+		<p>
+			La enseñanza de enfermería representa otro paso decisivo:
+			la formación comienza a responder a necesidades concretas de la
+			sociedad celayense y amplía el horizonte profesional de sus estudiantes.
+		</p>
+	</div>
+	<div class="story-block photo-frame">
+		<img src="img/enfermeria_1939.webp"
+			 alt="Formación en enfermería en Celaya">
+		<div class="photo-caption">
+			<strong>Los primeros años de la formación en enfermería</strong>
+			La incorporación de esta enseñanza forma parte de la expansión
+			de las opciones educativas profesionales en Celaya.
+		</div>
+	</div>
+
+	<!-- ========= IMPULSO DE GUERRERO RICO  ========= -->
+	<div class="story-block">
+		<h2>1943–1945</h2>
+		<h3>El impulso definitivo</h3>
+		<p>
+			La educación celayense comienza a proyectarse hacia una nueva etapa.
+			Se gestiona la preparatoria en Celaya bajo la visión de
+			Javier Guerrero Rico.
+		</p>
+	</div>
+	<div class="story-block photo-frame">
+		<img src="img/javierguerrerorico.webp"
+			 alt="Javier Guerrero Rico">
+		<div class="photo-caption">
+			<strong>Javier Guerrero Rico</strong>
+			Figura vinculada al impulso de la preparatoria en Celaya
+			durante los años previos a la consolidación del Instituto Celayense.
+		</div>
+	</div>
+	<div class="story-block highlight">
+		<div class="big-text">
+			La educación deja de ser inicial… y comienza a proyectarse.
+		</div>
+	</div>
+
+	<!-- ========= 1945  ========= -->
+	<div class="story-block">
+		<h2>1945</h2>
+		<h3>Nace el Instituto Celayense</h3>
+		<p>
+			Con 18 alumnos, Celaya inicia su propio camino educativo superior.
+		</p>
+		<p>
+			Lo que había comenzado como una respuesta a la necesidad educativa
+			de la ciudad comienza a convertirse en una tradición.
+		</p>
+	</div>
+	<div class="story-block photo-frame">
+		<img src="img/institutocelayense.webp"
+			 alt="Instituto Celayense">
+		<div class="photo-caption">
+			<strong>Instituto Celayense</strong>
+			Una nueva etapa para la educación de Celaya:
+			el camino hacia una formación superior con identidad propia.
+		</div>
+	</div>
+
+	<!-- =========  TRANSICIÓN A LA MEMORIA ========= -->
+	<div class="story-block cinematic">
+		<p>Las instituciones permanecen.</p>
+		<p>Pero las personas dejan memoria.</p>
+		<p>Y las generaciones transmiten lo aprendido.</p>
+	</div>
+	
+	<!-- ========= ESTUDIANTINA =========  -->
+	<div class="story-block testimony">
+		<div class="testimony-label">
+			TESTIMONIO ORAL
+		</div>
+		<h2>La memoria de una generación</h2>
+		<p>
+			Décadas después, quienes vivieron aquellos años todavía
+			conservaban en la memoria las formas en que se construía
+			la vida universitaria en Celaya.
+		</p>
+		<p>
+			Uno de los contemporáneos y amigos de Don Carlos comparte
+			en este testimonio recuerdos sobre la formación de la primera
+			estudiantina y las dificultades que acompañaron los primeros
+			proyectos universitarios en la ciudad.
+		</p>
+		<video controls>
+			<source src="vid/estudiantina.mp4" type="video/mp4">
+			Tu navegador no soporta la reproducción de video.
+		</video>
+	</div>
+
+	<!-- ========= LA UNIVERSIDAD Y CELAYA =========  -->
+	<div class="story-block cinematic">
+		<p>Guanajuato cambia.</p>
+		<p>Celaya responde.</p>
+		<p>La educación se conecta.</p>
+	</div>
+
+	<!-- ========= DON CARLOS =========  -->
+	<div class="story-block">
+		<h2>Una tradición que encuentra nuevas manos</h2>
+		<p>
+			La historia educativa de Celaya no terminó con aquellos primeros
+			maestros. Sus formas de entender la enseñanza fueron heredadas
+			por nuevas generaciones.
+		</p>
+		<p>
+			Entre ellas se encontraba Don Carlos.
+		</p>
+		<p>
+			Su historia pertenece a otra etapa, pero algunas de las ideas
+			que caracterizaron aquellos primeros años volverían a aparecer
+			transformadas en su manera de entender la formación de los estudiantes.
+		</p>
+	</div>
+
+	<div class="story-block highlight">
+		<div class="big-text">
+			La educación no solo se hereda.
+			También se transforma.
+		</div>
+	</div>
+
+	<!-- ========= TESTIMONIO · COCO ========= -->
+	<div class="story-block testimony">
+		<div class="testimony-label">
+			TESTIMONIO ORAL · COCO
+		</div>
+		<h2>La memoria de una generación</h2>
+		<p>
+			Pero el relato no termina en los recuerdos de aquella vida
+			universitaria. También aparece una manera distinta de entender
+			la formación: acercar a los estudiantes al mundo profesional.
+		</p>
+		<p>
+			Don Carlos impulsaría las visitas a empresas como parte de la
+			formación de los estudiantes, acercándolos a una realidad que
+			ocurría más allá de las aulas.
+		</p>
+		<video controls>
+			<source src="vid/coco.mp4" type="video/mp4">
+			Tu navegador no soporta la reproducción de video.
+		</video>
+		<p>
+			Al final de su relato, Coco habla también de su propio camino.
+			Terminó ambas carreras y continuó una vida profesional que lo
+			llevaría, entre otras experiencias, a trabajar en el Consulado
+			de Costa Rica.
+		</p>
+		<p>
+			Su historia permite comprender algo que trasciende las fechas:
+			aquella educación no solamente preparaba para aprobar materias.
+			Podía abrir caminos que sus estudiantes todavía no alcanzaban
+			a imaginar.
+		</p>
+	</div>
+
+	<!-- ========= CIERRE ======== -->
+	<div class="story-block cinematic">
+		<p>
+			Primero fueron las aulas.
+		</p>
+		<p>
+			Después, las generaciones.
+		</p>
+		<p>
+			Y con ellas, nuevas formas de entender la educación.
+		</p>
+		<br>
+		<h2 style="color:#fff;">
+			La historia apenas comenzaba.
+		</h2>
+	</div>
+	<div class="story-block highlight">
+		<h2>Cierre del capítulo</h2>
+		<p>
+			Celaya deja de ser periférica.
+			Empieza a construir identidad propia.
+		</p>
+		<p>
+			Los primeros maestros abrieron el camino.
+			Las siguientes generaciones comenzaron a transformarlo.
+		</p>
+	</div>
+
+	<!-- ========= Navegación UX ========= -->
+	<div class="chapter-nav">
+		<a href="capitulo1.html">← Capítulo I</a>
+		<a href="index.html">🏠 Timeline</a>
+		<a href="capitulo3.html">Capítulo III →</a>
+	</div>
+
+<!-- ========= Cierre de container ========= -->
+</div>
+
+	<!-- ========= Botón arriba backTop ========= -->
+	<button class="back-top" id="backTop" type="button" aria-label="Volver arriba" title="Volver arriba">    ↑ </button>
+
+	<!-- ========= Inmersión ambiental ========= -->
+	<audio id="paperSound" preload="auto">
+		<source src="audio/vueltadepagina.mp3" type="audio/mpeg">
+		Tu navegador no soporta elementos de audio.
+	</audio>
+
+
+
+		<script>
+		const blocks = document.querySelectorAll('.story-block');
+		const paperSound = document.getElementById("paperSound");
+		let played = false;
+
+		const observer = new IntersectionObserver(entries=>{
+			entries.forEach(entry=>{
+				if(entry.isIntersecting){
+					entry.target.classList.add('visible');
+
+					if(!played){
+						paperSound.play().catch(()=>{});
+						played = true;
+					}
+				}
+			});
+		},{
+			threshold:0.25
+		});
+
+		blocks.forEach(b=>observer.observe(b));
+
+
+		/* Botón arriba Backtop*/
+		const backTop = document.getElementById("backTop");
+		window.addEventListener("scroll", () => {
+			if(window.scrollY > 400){
+				backTop.style.display = "block";
+			}else{
+				backTop.style.display = "none";
+			}
+		});
+		backTop.addEventListener("click", () => {
+			window.scrollTo({
+				top:0,
+				behavior:'smooth'
+			});
+		});
+		</script>
+
+	</body>
+</html>

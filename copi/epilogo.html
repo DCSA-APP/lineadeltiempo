@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Epílogo - Donde siempre regresan las golondrinas</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE CINEMÁTICA
+========================= */
+
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background:#0b0b0b;
+    color:#f2f2f2;
+}
+
+/* CONTENEDOR */
+.container{
+    max-width:800px;
+    margin:0 auto;
+    padding:120px 30px;
+    text-align:center;
+}
+
+/* TÍTULO */
+.title{
+    font-size:12px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#a2915F;
+    margin-bottom:30px;
+}
+
+/* TEXTO */
+p{
+    font-size:20px;
+    line-height:1.9;
+    margin:25px 0;
+
+    opacity:0;
+    transform:translateY(25px);
+    transition:1.2s ease;
+}
+
+p.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* DESTACADOS */
+.highlight{
+    font-size:24px;
+    color:#ffffff;
+    margin:60px 0;
+}
+
+/* CITA */
+.quote{
+    font-style:italic;
+    color:#d4c6a1;
+}
+
+/* ESPACIOS */
+.space{
+    height:60px;
+}
+
+/* VIDEO */
+.video{
+    margin-top:80px;
+    background:#111;
+    border-radius:10px;
+    height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#777;
+    font-size:14px;
+}
+.media-block{
+    margin:40px 0;
+}
+
+.media-block img,
+.media-block video,
+.audio-block audio{
+    width:100%;
+    border-radius:10px;
+    transition:0.5s;
+}
+
+.media-block img:hover,
+.media-block video:hover{
+    transform:scale(1.02);
+}
+/* BOTÓN REGRESO */
+.back{
+    margin-top:80px;
+}
+
+.back a{
+    display:inline-block;
+    padding:12px 18px;
+    background:#a2915F;
+    color:#000;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s ease;
+}
+
+.back a:hover{
+    transform:scale(1.05);
+    background:#c0a96b;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO PAPEL -->
+<audio id="paperSound" src="paper.mp3" preload="auto"></audio>
+
+<div class="container">
+
+<div class="title">EPÍLOGO</div>
+
+<h1 class="fade">Donde siempre regresan las golondrinas</h1>
+
+<div class="space"></div>
+
+<!-- =========================
+NARRACIÓN
+========================= -->
+
+<p class="fade">Hay historias que no terminan… solo cambian de forma.</p>
+
+<p class="fade">
+El tiempo, como un cauce silencioso, ha ido separando y reuniendo caminos:
+lo que un día fue secundaria, hoy es una institución con vida propia;
+lo que nació como escuela, después fue facultad;
+lo que parecía una extensión, encontró su raíz en la UNESS;
+y todo, sin excepción, ha vuelto a encontrarse en un mismo horizonte: el multicampus.
+</p>
+
+<p class="fade">No como fragmentos dispersos, sino como ramas de un mismo árbol.</p>
+
+<div class="highlight fade">Como las golondrinas.</div>
+
+<p class="fade">
+Que parten en su momento, que toman distancia,
+que parecen perderse en el cielo…
+</p>
+
+<p class="fade">pero que siempre, inevitablemente, regresan al mismo nido.</p>
+
+<div class="space"></div>
+
+<p class="fade">Así ha sido esta historia.</p>
+
+<p class="fade">
+Las aulas cambiaron, los edificios crecieron, los nombres evolucionaron,
+pero el espíritu ha permanecido intacto.
+</p>
+
+<p class="fade">
+En quienes enseñan. En quienes aprenden.
+Y en quienes, como Don Carlos, entendieron que la universidad no se habita… se siente.
+</p>
+
+<div class="space"></div>
+
+<p class="fade">
+Porque no se trata solo de estructuras académicas,
+ni de modelos educativos,
+ni siquiera de reformas.
+</p>
+
+<div class="highlight fade">
+Se trata de vínculos. De memoria. De identidad.
+</div>
+
+<p class="fade">
+Hoy, en medio de nuevas formas y tecnologías,
+la historia no se rompe. Se continúa.
+</p>
+
+<p class="fade quote">
+“Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora…”
+</p>
+
+<p class="fade">
+Y en esa hora —la nuestra—
+no toca comenzar de nuevo, ni mirar atrás con nostalgia.
+</p>
+
+<p class="fade">Toca reconocer que todo lo vivido… sigue latiendo.</p>
+
+<div class="space"></div>
+
+<p class="fade">
+Cada generación ha sido parte de una construcción invisible.
+</p>
+
+<p class="fade">
+El corazón de quienes fundaron, enseñaron y creyeron no pertenece al pasado.
+</p>
+
+<div class="highlight fade">
+Es el cimiento del presente. Y el impulso del futuro.
+</div>
+
+<div class="space"></div>
+
+<p class="fade highlight">
+Porque mientras alguien recuerde,
+mientras alguien enseñe con vocación,
+mientras alguien se enamore de su universidad…
+</p>
+
+<h2 class="fade" style="color:#a2915F; font-size:28px;">
+las golondrinas seguirán regresando.
+</h2>
+
+<!-- VIDEO -->
+<div class="story-block media-block">
+    <video controls>
+        <source src="vid/epilogo.mp4">
+    </video>
+</div>
+
+
+<!-- BOTÓN -->
+<div class="back fade">
+    <a href="index.html">← Volver al inicio</a>
+</div>
+
+</div>
+
+<script>
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+const items = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add('visible');
+
+            // sonido papel suave
+            const sound = document.getElementById('paperSound');
+            if(sound){
+                sound.currentTime = 0;
+                sound.play();
+            }
+        }
+    });
+},{threshold:0.2});
+
+items.forEach(i=>observer.observe(i));
+
+</script>
+
+</body>
+</html>

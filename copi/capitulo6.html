@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Capítulo VI - Expansión y Permanencia</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background:#f4f1ea;
+    color:#333;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width:900px;
+    margin:80px auto;
+    padding:30px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
+
+h1{ color:#22508e; font-size:34px; margin-bottom:10px; }
+h2{ color:#a2915F; margin-top:45px; }
+h3{ color:#555; font-weight:400; }
+
+p{ line-height:1.8; }
+
+.big-text{
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* =========================
+   CAPÍTULO LABEL
+========================= */
+
+.chapter-title{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+}
+
+/* =========================
+   BLOQUES ANIMADOS
+========================= */
+
+.story-block{
+    margin:85px 0;
+    opacity:0;
+    transform:translateY(45px);
+    transition:0.9s ease;
+}
+
+.story-block.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+.highlight{
+    background:rgba(162,145,95,0.12);
+    padding:25px;
+    border-left:5px solid #a2915F;
+    border-radius:6px;
+}
+
+/* =========================
+   CINEMATIC
+========================= */
+
+.cinematic{
+    background:#111;
+    color:#fff;
+    padding:70px 30px;
+    text-align:center;
+    border-radius:10px;
+}
+
+/* =========================
+   MEDIA
+========================= */
+
+.media img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* =========================
+   NAV
+========================= */
+
+.chapter-nav{
+    margin-top:70px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.chapter-nav a{
+    text-decoration:none;
+    background:#22508e;
+    color:#fff;
+    padding:10px 15px;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.chapter-nav a:hover{
+    background:#1a3e6b;
+}
+
+/* =========================
+   AUDIO
+========================= */
+
+audio{
+    width:100%;
+    margin-top:20px;
+}
+
+/* =========================
+   BOTÓN SONIDO
+========================= */
+
+.sound-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#a2915F;
+    color:#fff;
+    border:none;
+    padding:12px 14px;
+    border-radius:50%;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SONIDO PAPEL -->
+<audio id="paperSound" src="audio/paper.mp3" preload="auto"></audio>
+
+<button class="sound-btn" onclick="toggleSound()">📜</button>
+
+<div class="container">
+
+<!-- =========================
+HEADER
+========================= -->
+
+<div class="story-block visible">
+
+<div class="chapter-title">CAPÍTULO VI</div>
+
+<h1>Expansión, territorio y permanencia</h1>
+<h3>1997 – Actualidad</h3>
+
+<p class="big-text">
+¿Cómo crecer sin perder el alma?
+</p>
+
+<p>
+A finales del siglo XX, la Universidad se enfrenta a una decisión decisiva: expandirse sin perder identidad.
+</p>
+
+</div>
+
+<!-- =========================
+1997
+========================= -->
+
+<div class="story-block">
+
+<h2>1997 · La llegada a Salvatierra</h2>
+
+<p>
+Nace la Unidad de Estudios Superiores de Salvatierra (UNESS).
+</p>
+
+<p>
+No es expansión: es necesidad social.
+</p>
+
+</div>
+
+<div class="story-block media">
+<img src="img/salvatierra1.jpg">
+</div>
+
+<!-- =========================
+CONSTRUCCIÓN
+========================= -->
+
+<div class="story-block highlight">
+
+<h2>Un inicio sin condiciones</h2>
+
+<p>
+Sin infraestructura, sin recursos suficientes… pero con voluntad.
+</p>
+
+</div>
+
+<!-- =========================
+COMUNIDAD
+========================= -->
+
+<div class="story-block">
+
+<h2>Construir desde la carencia</h2>
+
+<p>
+Colaborar, adaptarse, innovar y comprometerse.
+</p>
+
+</div>
+
+<!-- =========================
+FORMACIÓN
+========================= -->
+
+<div class="story-block cinematic">
+
+<p>La Universidad no se recibió hecha</p>
+<p>Se construyó en el camino</p>
+
+</div>
+
+<!-- =========================
+CRECIMIENTO
+========================= -->
+
+<div class="story-block">
+
+<h2>Una comunidad en formación</h2>
+
+<p>
+Docentes, estudiantes y administrativos construyen el proyecto.
+</p>
+
+</div>
+
+<!-- =========================
+INTEGRACIÓN
+========================= -->
+
+<div class="story-block highlight">
+
+<h2>Más que crecimiento: integración</h2>
+
+<p>
+Celaya y Salvatierra se unen en un modelo de Campus.
+</p>
+
+</div>
+
+<!-- =========================
+DIVISIÓN
+========================= -->
+
+<div class="story-block">
+
+<h2>El nacimiento de la División</h2>
+
+<p>
+Ciencias Sociales y Administrativas reúne décadas de historia.
+</p>
+
+</div>
+
+<!-- =========================
+RIESGO
+========================= -->
+
+<div class="story-block cinematic">
+
+<p>Crecer también es riesgo</p>
+<p>La cercanía puede diluirse</p>
+
+</div>
+
+<!-- =========================
+MEMORIA
+========================= -->
+
+<div class="story-block highlight">
+
+<h2>La memoria como ancla</h2>
+
+<p>
+Recordar es identidad.
+</p>
+
+</div>
+
+<!-- =========================
+DON CARLOS
+========================= -->
+
+<div class="story-block cinematic">
+
+<p>“Enamórense de su Universidad…”</p>
+
+</div>
+
+<div class="story-block highlight">
+
+<p>
+Don Carlos representa la memoria viva de la institución.
+</p>
+
+</div>
+
+<!-- =========================
+CIERRE
+========================= -->
+
+<div class="story-block highlight">
+
+<h2>Cierre del capítulo</h2>
+
+<p>
+La Universidad no es estructura: es historia compartida.
+</p>
+
+<p>
+Y sigue viva mientras alguien la recuerde.
+</p>
+
+</div>
+
+<!-- NAVEGACIÓN -->
+
+<div class="chapter-nav">
+<a href="capitulo5.html">← Capítulo V</a>
+<a href="epilogo.html">Epílogo →</a>
+</div>
+
+</div>
+
+<script>
+
+// =========================
+// ANIMACIÓN SCROLL
+// =========================
+
+const blocks = document.querySelectorAll('.story-block');
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            playPaper();
+        }
+    });
+},{threshold:0.2});
+
+blocks.forEach(b=>observer.observe(b));
+
+// =========================
+// SONIDO PAPEL
+// =========================
+
+let soundEnabled = true;
+const audio = document.getElementById("paperSound");
+
+function playPaper(){
+    if(soundEnabled && audio){
+        audio.currentTime = 0;
+        audio.play().catch(()=>{});
+    }
+}
+
+function toggleSound(){
+    soundEnabled = !soundEnabled;
+    alert(soundEnabled ? "Sonido activado" : "Sonido desactivado");
+}
+
+</script>
+
+</body>
+</html>

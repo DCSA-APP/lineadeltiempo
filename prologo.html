@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prólogo - Memoria viva</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background:#0b0b0b;
+    color:#f2f2f2;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.container{
+    max-width:800px;
+    margin:0 auto;
+    padding:120px 30px;
+    text-align:left;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.title{
+    font-size:12px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#a2915F;
+    margin-bottom:40px;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+p{
+    font-size:18px;
+    line-height:1.9;
+    margin:25px 0;
+    opacity:0;
+    transform:translateY(25px);
+    transition:1.2s ease;
+}
+
+p.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   DESTACADO
+========================= */
+
+.highlight{
+    font-size:22px;
+    color:#ffffff;
+    margin:50px 0;
+}
+
+/* =========================
+   CITA
+========================= */
+
+.quote{
+    font-style:italic;
+    color:#d4c6a1;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.nav{
+    margin-top:80px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.nav a{
+    text-decoration:none;
+    background:#a2915F;
+    color:#111;
+    padding:12px 16px;
+    border-radius:6px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.nav a:hover{
+    background:#c2b07a;
+}
+
+/* =========================
+   EFECTO SUAVE GENERAL
+========================= */
+
+.fade{
+    transition:1.5s ease;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- =========================
+   ENCABEZADO
+========================= -->
+
+<div class="title">PRÓLOGO</div>
+
+<h1 class="fade">Memoria viva de una comunidad</h1>
+
+<!-- =========================
+   NARRACIÓN
+========================= -->
+
+<p class="fade">
+La historia que aquí se presenta no pertenece a una sola voz, ni a un solo momento.
+</p>
+
+<p class="fade">
+Es el intento de entrelazar múltiples trayectorias que, con el paso del tiempo, han dado forma a una comunidad educativa viva: la Universidad de Guanajuato, su presencia en Celaya y, dentro de ese entramado, la huella profundamente humana de quienes la hicieron posible.
+</p>
+
+<p class="fade highlight">
+Entre esas historias, una permanece constante: Don Carlos.
+</p>
+
+<p class="fade">
+Su paso por la Escuela, la Facultad, la División y el Campus no puede entenderse como una sucesión de etapas, sino como continuidad.
+</p>
+
+<p class="fade">
+Su pertenencia no dependía de estructuras, sino de vínculos.
+</p>
+
+<p class="fade">
+Quien tuvo la oportunidad de conocerlo, difícilmente puede hablar de él sin que algo se suavice por dentro.
+</p>
+
+<p class="fade">
+Había en su forma de estar autenticidad, cercanía y una alegría genuina por compartir.
+</p>
+
+<p class="fade">
+Sus anécdotas no eran solo recuerdos: eran enseñanza viva.
+</p>
+
+<p class="fade">
+Amó profundamente la Universidad de Guanajuato, su familia y la familia que su propia vida extendió.
+</p>
+
+<p class="fade">
+Junto a Becos, su compañera de vida, construyó una “fronda de corazones”.
+</p>
+
+<p class="fade quote">
+“Dios ha bendecido nuestro hogar… les entrego mi corazón. Gracias por ser y acompañarme.”
+</p>
+
+<p class="fade">
+No era una frase ceremonial. Era una forma de vivir.
+</p>
+
+<p class="fade">
+Y desde entonces, su vida quedó entrelazada con la Universidad.
+</p>
+
+<p class="fade">
+“Enamórense de su Universidad… esta no se acaba al terminar las materias, va más allá.”
+</p>
+
+<p class="fade highlight">
+La Universidad no solo forma profesionales. Forma vínculos, identidad y sentido de pertenencia.
+</p>
+
+<p class="fade">
+Este documento no busca solo ordenar hechos.
+Busca recuperar memoria.
+</p>
+
+<p class="fade">
+Porque una institución no se sostiene únicamente por su estructura.
+Se sostiene por lo que no siempre se nombra.
+</p>
+
+<p class="fade quote">
+“Los hombres no lloran… y entre lágrimas y risas de mis recuerdos…”
+</p>
+
+<p class="fade">
+Quizá la historia no solo se escribe con datos.
+También se escribe con lo que permanece.
+</p>
+
+<!-- =========================
+   NAVEGACIÓN
+========================= -->
+
+<div class="nav">
+    <a href="capitulo1.html">Entrar a la historia</a>
+</div>
+
+</div>
+
+<script>
+
+const items = document.querySelectorAll('p, h1');
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add('visible');
+        }
+    });
+},{threshold:0.2});
+
+items.forEach(i=>observer.observe(i));
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Capítulo III - Profesionalización y vocación</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+<style>
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background:#f4f1ea;
+    color:#333;
+}
+
+/* BOTÓN INICIO */
+.top-bar{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:999;
+}
+
+.top-bar a{
+    background:#22508e;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.top-bar a:hover{
+    background:#1b3f70;
+    transform:translateY(-2px);
+}
+
+.container{
+    max-width:900px;
+    margin:80px auto;
+    padding:30px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{ color:#22508e; font-size:34px; }
+h2{ color:#a2915F; margin-top:50px; }
+h3{ color:#555; font-weight:400; }
+
+p{ line-height:1.8; }
+
+.big-text{ font-size:20px; line-height:1.8; }
+
+.chapter-title{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+}
+
+.story-block{
+    margin:85px 0;
+    opacity:0;
+    transform:translateY(60px) scale(0.98);
+    filter:blur(6px);
+    transition:1s ease;
+}
+
+.story-block.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+}
+
+.highlight{
+    background:rgba(162,145,95,0.12);
+    padding:25px;
+    border-left:5px solid #a2915F;
+    border-radius:6px;
+}
+
+.cinematic{
+    background:#111;
+    color:#fff;
+    padding:80px 30px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.cinematic p{
+    font-size:20px;
+    letter-spacing:1px;
+}
+
+.media-block{
+    margin:40px 0;
+}
+
+.media-block img,
+.media-block video,
+.audio-block audio{
+    width:100%;
+    border-radius:10px;
+    transition:0.5s;
+}
+
+.media-block img:hover,
+.media-block video:hover{
+    transform:scale(1.02);
+}
+
+.audio-block{
+    margin:40px 0;
+}
+
+.carousel{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:10px;
+    scroll-snap-type:x mandatory;
+}
+
+.carousel img{
+    width:300px;
+    border-radius:10px;
+    scroll-snap-align:center;
+}
+
+.hero{
+    height:70vh;
+    background:url('img/hero-cap3.webp') center/cover no-repeat;
+    position:relative;
+    border-radius:10px;
+    margin-bottom:60px;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    border-radius:10px;
+}
+
+.hero-text{
+    position:absolute;
+    bottom:40px;
+    left:40px;
+    color:white;
+    z-index:2;
+}
+
+.hero-text h1{
+    color:white;
+    margin:0;
+}
+
+.chapter-nav{
+    margin-top:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.chapter-nav a{
+    text-decoration:none;
+    background:#22508e;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+}
+
+/* BOTÓN ARRIBA */
+.back-top{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:#a2915F;
+    color:white;
+    border:none;
+    padding:15px 18px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+    display:none;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.back-top:hover{
+    transform:scale(1.1);
+}
+.slider{position:relative;overflow:hidden;max-width:900px;margin:20px auto}
+.slides{display:flex;transition:transform .5s ease}
+.slides img{width:100%;flex-shrink:0}
+.prev,.next{position:absolute;top:50%;transform:translateY(-50%);background:#0008;color:#fff;border:none;padding:10px;cursor:pointer}
+.prev{left:10px}.next{right:10px}
+.dots{text-align:center;margin-top:10px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#bbb;margin:4px;cursor:pointer}.dot.active{background:#22508e}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <a href="index.html">← Timeline</a>
+</div>
+
+<div class="container">
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>CAPÍTULO III </h1>
+        <p>1933–1973 Profesionalización y vocación</p>
+    </div>
+</div>
+
+<div class="story-block">
+    <h2>De oficio a profesión</h2>
+    <p>En 1933 surge la carrera de contador privado.</p>
+    <p>En 1948 se consolida la Contaduría Pública y Auditoría.</p>
+</div>
+
+<div class="story-block highlight">
+    La educación deja de ser auxiliar… y se vuelve profesional.
+</div>
+
+<div class="story-block">
+
+<h2>Galería histórica</h2>
+
+<div class="slider">
+<button class="prev">&#10094;</button>
+<div class="slides">
+<img src="img/cap3-c1-01.webp"><img src="img/cap3-c1-02.webp"><img src="img/cap3-c1-03.webp"><img src="img/cap3-c1-04.webp">
+</div>
+<button class="next">&#10095;</button><div class="dots"></div></div>
+
+</div>
+
+<div class="story-block cinematic">
+    <p>No tenían certezas.</p>
+    <p>Tenían convicción.</p>
+</div>
+
+<div class="story-block">
+    <h2>Una generación que abre camino</h2>
+    <p>Surgen estudiantes que no solo aprenden… sino que construyen el camino.</p>
+</div>
+
+<div class="story-block highlight">
+
+    Don Carlos Martínez Inda pertenece a esa generación.
+</div>
+
+<div class="story-block media-block">
+	<video controls>
+        <source src="vid/carlosmtz.mp4">
+    </video>
+</div>
+
+<div class="story-block">
+<h2>Galería histórica</h2>
+<div class="slider">
+<button class="prev">&#10094;</button>
+<div class="slides">
+<img src="img/cap3-c2-01.webp"><img src="img/cap3-c2-02.webp"><img src="img/cap3-c2-03.webp"><img src="img/cap3-c2-04.webp"><img src="img/cap3-c2-05.webp">
+</div>
+<button class="next">&#10095;</button><div class="dots"></div></div>
+</div>
+
+<div class="story-block">
+    <h2>1956</h2>
+    <h3>Primera generación de titulados</h3>
+    <p>Se titulan los primeros Contadores Privados y Auditores en Celaya.</p>
+</div>
+
+<div class="story-block media-block">
+    <img src="img/cap3-graduados.webp">
+</div>
+
+<div class="story-block media-block">
+    <video controls>
+        <source src="vid/fragmento.mp4">
+    </video>
+</div>
+
+<div class="story-block cinematic">
+    <p>La institución crece</p>
+    <p>La estructura se reorganiza</p>
+    <p>Pero la esencia permanece</p>
+</div>
+
+<div class="story-block">
+    <h2>Crecimiento y estructura</h2>
+    <p>La educación se reorganiza: secundaria, preparatoria y profesional.</p>
+</div>
+
+<div class="story-block">
+
+<h2>Galería histórica</h2>
+
+<div class="slider">
+<button class="prev">&#10094;</button>
+<div class="slides">
+<img src="img/cap3-c3-001.webp">
+<img src="img/cap3-c3-002.webp">
+<img src="img/cap3-c3-003.webp">
+<img src="img/cap3-c3-004.webp">
+<img src="img/cap3-c3-005.webp">
+<img src="img/cap3-c3-006.webp">
+<img src="img/cap3-c3-007.webp">
+<img src="img/cap3-c3-008.webp">
+<img src="img/cap3-c3-009.webp">
+<img src="img/cap3-c3-010.webp">
+<img src="img/cap3-c3-011.webp">
+<img src="img/cap3-c3-012.webp">
+<img src="img/cap3-c3-013.webp">
+<img src="img/cap3-c3-014.webp">
+<img src="img/cap3-c3-015.webp">
+<img src="img/cap3-c3-016.webp">
+<img src="img/cap3-c3-017.webp">
+<img src="img/cap3-c3-018.webp">
+<img src="img/cap3-c3-019.webp">
+<img src="img/cap3-c3-020.webp">
+<img src="img/cap3-c3-021.webp">
+<img src="img/cap3-c3-022.webp">
+</div>
+<button class="next">&#10095;</button><div class="dots"></div></div>
+
+</div>
+
+<div class="story-block highlight">
+    <h2>Cierre del capítulo</h2>
+    <p>Celaya ya no solo forma estudiantes… inicia con la formación de su comunidad.</p>
+</div>
+
+<div class="chapter-nav">
+    <a href="capitulo2.html">← Capítulo II</a>
+    <a href="capitulo4.html">Capítulo IV →</a>
+</div>
+
+</div>
+
+<button class="back-top" id="backTop">↑</button>
+
+<audio id="paperSound">
+    <source src="audio/page-flip.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const blocks = document.querySelectorAll('.story-block');
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        }
+    });
+},{threshold:0.15});
+
+blocks.forEach(b=>observer.observe(b));
+
+const backTop=document.getElementById("backTop");
+
+window.addEventListener("scroll",()=>{
+    if(window.scrollY>400){
+        backTop.style.display="block";
+    }else{
+        backTop.style.display="none";
+    }
+});
+
+backTop.addEventListener("click",()=>{
+    window.scrollTo({top:0,behavior:'smooth'});
+});
+
+const sound=document.getElementById("paperSound");
+document.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        sound.play();
+    });
+});
+
+document.querySelectorAll('.slider').forEach(slider=>{
+const slides=slider.querySelector('.slides');
+const imgs=[...slides.querySelectorAll('img')];
+const dots=slider.querySelector('.dots');
+let i=0,t;
+imgs.forEach((_,n)=>{let d=document.createElement('span');d.className='dot'+(n==0?' active':'');d.onclick=()=>go(n);dots.appendChild(d);});
+const ds=[...dots.children];
+function render(){slides.style.transform=`translateX(-${i*100}%)`;ds.forEach((d,n)=>d.classList.toggle('active',n===i));}
+function go(n){i=n;render();}
+slider.querySelector('.next').onclick=()=>{i=(i+1)%imgs.length;render();}
+slider.querySelector('.prev').onclick=()=>{i=(i-1+imgs.length)%imgs.length;render();}
+function start(){t=setInterval(()=>{i=(i+1)%imgs.length;render();},5000)}
+function stop(){clearInterval(t)}
+slider.onmouseenter=stop;slider.onmouseleave=start;start();render();
+});
+</script>
+
+</body>
+</html>

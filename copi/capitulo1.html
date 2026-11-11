@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Capítulo I - Raíces de una tradición educativa</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+<style>
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background:#f4f1ea;
+    color:#333;
+}
+
+/* BOTÓN INICIO */
+.top-bar{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:999;
+}
+
+.top-bar a{
+    background:#22508e;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.top-bar a:hover{
+    background:#1b3f70;
+    transform:translateY(-2px);
+}
+
+.container{
+    max-width:900px;
+    margin:80px auto;
+    padding:30px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{ color:#22508e; font-size:34px; }
+h2{ color:#a2915F; margin-top:50px; }
+h3{ color:#555; font-weight:400; }
+
+p{ line-height:1.8; }
+
+.big-text{ font-size:20px; line-height:1.8; }
+
+.chapter-title{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+}
+
+.story-block{
+    margin:85px 0;
+    opacity:0;
+    transform:translateY(60px) scale(0.98);
+    filter:blur(6px);
+    transition:1s ease;
+}
+
+.story-block.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+}
+
+.highlight{
+    background:rgba(162,145,95,0.12);
+    padding:25px;
+    border-left:5px solid #a2915F;
+    border-radius:6px;
+}
+
+.cinematic{
+    background:#111;
+    color:#fff;
+    padding:80px 30px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.cinematic p{
+    font-size:20px;
+    letter-spacing:1px;
+}
+
+.media-block{
+    margin:40px 0;
+}
+
+.media-block img,
+.media-block video,
+.audio-block audio{
+    width:100%;
+    border-radius:10px;
+    transition:0.5s;
+}
+
+.media-block img:hover,
+.media-block video:hover{
+    transform:scale(1.02);
+}
+
+.audio-block{
+    margin:40px 0;
+}
+
+.carousel{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:10px;
+    scroll-snap-type:x mandatory;
+}
+
+.carousel img{
+    width:300px;
+    border-radius:10px;
+    scroll-snap-align:center;
+}
+
+.hero{
+    height:70vh;
+    background:url('img/hero-cap3.webp') center/cover no-repeat;
+    position:relative;
+    border-radius:10px;
+    margin-bottom:60px;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    border-radius:10px;
+}
+
+.hero-text{
+    position:absolute;
+    bottom:40px;
+    left:40px;
+    color:white;
+    z-index:2;
+}
+
+.hero-text h1{
+    color:white;
+    margin:0;
+}
+
+.chapter-nav{
+    margin-top:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.chapter-nav a{
+    text-decoration:none;
+    background:#22508e;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+}
+
+/* BOTÓN ARRIBA */
+.back-top{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:#a2915F;
+    color:white;
+    border:none;
+    padding:15px 18px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+    display:none;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.back-top:hover{
+    transform:scale(1.1);
+}
+.slider{position:relative;overflow:hidden;max-width:900px;margin:20px auto}
+.slides{display:flex;transition:transform .5s ease}
+.slides img{width:100%;flex-shrink:0}
+.prev,.next{position:absolute;top:50%;transform:translateY(-50%);background:#0008;color:#fff;border:none;padding:10px;cursor:pointer}
+.prev{left:10px}.next{right:10px}
+.dots{text-align:center;margin-top:10px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#bbb;margin:4px;cursor:pointer}.dot.active{background:#22508e}
+
+/* FOTOGRAFÍAS INDIVIDUALES CON PIE DE FOTO */
+
+.photo-frame{
+    margin:40px 0;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.photo-frame img{
+    display:block;
+    width:100%;
+    border-radius:0;
+    transition:0.5s;
+}
+
+.photo-frame img:hover{
+    transform:scale(1.02);
+}
+
+.photo-caption{
+    padding:14px 18px;
+    border-top:3px solid #a2915F;
+    background:#f8f7f3;
+    color:#555;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.photo-caption strong{
+    display:block;
+    color:#22508e;
+    font-size:15px;
+    margin-bottom:3px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>Raíces de una tradición educativa</h1>
+        <p>1732–1870 · Origen de una identidad que permanece</p>
+    </div>
+</div>
+
+<div class="story-block visible">
+
+<div class="chapter-title">CAPÍTULO I</div>
+
+<p class="big-text">
+Antes de que existieran aulas como hoy las conocemos, ya había en Guanajuato una inquietud constante: formar, acompañar y construir comunidad a través del conocimiento.
+</p>
+
+<p>
+Esa inquietud no surgió de manera repentina. Fue tomando forma lentamente en espacios donde la enseñanza era un acto profundamente humano.
+</p>
+
+</div>
+
+<div class="story-block photo-frame">
+    <img src="img/img01.webp" alt="Contexto histórico Guanajuato">
+
+    <div class="photo-caption">
+        <strong>Contexto histórico de Guanajuato</strong>
+        Vista histórica relacionada con los primeros espacios de formación educativa en Guanajuato.
+    </div>
+</div>
+
+<div class="story-block">
+<h2>El origen: Hospicio de la Santísima Trinidad (1732)</h2>
+<p>Se establece el Hospicio de la Santísima Trinidad como punto de partida de la tradición educativa en Guanajuato.</p>
+<p>Más que una institución, representaba una forma de enseñanza vinculada con el acompañamiento social y moral.</p>
+</div>
+
+<div class="story-block highlight">
+    <div class="big-text">
+        Educar no solo como instrucción, sino como formación integral de la persona.
+    </div>
+</div>
+
+<div class="story-block photo-frame">
+    <img src="img/hospicio.webp" alt="Hospicio de la Santísima Trinidad">
+
+    <div class="photo-caption">
+        <strong>Hospicio de la Santísima Trinidad</strong>
+        Guanajuato, siglo XVIII. Uno de los espacios vinculados con los primeros antecedentes de la tradición educativa.
+    </div>
+</div>
+
+<div class="story-block">
+<h2>Los Reales Colegios (1744–1798)</h2>
+<p>La educación adquiere estructura y permanencia bajo la influencia de la Nueva España.</p>
+</div>
+
+<div class="story-block highlight">
+    <div class="big-text">
+        La enseñanza adquiría forma, pero también identidad.
+    </div>
+</div>
+
+<section class="story-block cinematic-video">
+
+<div class="story-block media-block">
+    <video controls>
+        <source src="vid/salazarygarcia.mp4">
+    </video>
+</div>
+
+</section>
+
+<div class="story-block cinematic">
+<p>México cambia.</p>
+<p>La educación también.</p>
+</div>
+
+<div class="story-block">
+<h2>La transformación tras la Independencia (1828–1870)</h2>
+<p>Se consolida el Colegio del Estado, marcando un cambio de sentido en la educación.</p>
+</div>
+
+<div class="story-block highlight">
+    <h2>Es un cambio de sentido</h2>
+    <p>La educación se orienta hacia la formación de ciudadanos y pensamiento crítico.</p>
+</div>
+
+<div class="story-block cinematic">
+<p>La cercanía entre quienes enseñan y quienes aprenden</p>
+<p>El sentido de comunidad</p>
+<p>La formación con propósito humano</p>
+<p>La permanencia de valores</p>
+</div>
+
+<div class="story-block">
+<h2>Una semilla que permanece</h2>
+<p>Mucho antes de Facultades o Campus, ya existía una comunidad educativa en formación.</p>
+</div>
+
+<div class="story-block cinematic">
+<p>Se adapta</p>
+<p>Se transforma</p>
+<p>Se traslada</p>
+<br>
+<h2>Entre ellos: Celaya</h2>
+</div>
+
+<div class="story-block media-block">
+    <video controls>
+        <source src="vid/brevehistoria.mp4">
+    </video>
+</div>
+
+<div class="story-block highlight">
+<h2>Cierre del capítulo</h2>
+<p>Lo que aquí inicia no es solo una cronología, sino el origen de una identidad educativa.</p>
+<p>Algunas historias son institucionales. Otras profundamente humanas.</p>
+</div>
+
+<div class="chapter-nav">
+    <a href="index.html">🏠 Timeline</a>
+    <a href="capitulo2.html">Siguiente capítulo →</a>
+</div>
+
+</div>
+
+<audio id="paperSound" preload="auto">
+    <source src="audio/paper.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const blocks = document.querySelectorAll('.story-block');
+const paperSound = document.getElementById("paperSound");
+let played = false;
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+
+            if(!played){
+                paperSound.play().catch(()=>{});
+                played = true;
+            }
+        }
+    });
+},{
+    threshold:0.25
+});
+
+blocks.forEach(b=>observer.observe(b));
+</script>
+
+</body>
+</html>

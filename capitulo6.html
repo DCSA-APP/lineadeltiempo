@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulo VI - Expansión y Permanencia</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link rel="stylesheet" href="lineadeltiempo.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- =========================
+HEADER
+========================= -->
+
+<div class="story-block visible">
+
+<div class="chapter-title">CAPÍTULO VI</div>
+
+<h1>Expansión, territorio y permanencia</h1>
+<h3>1997 – Actualidad</h3>
+
+<p class="big-text">
+¿Cómo crecer sin perder el alma?
+</p>
+
+<p>
+A finales del siglo XX, la Universidad se enfrenta a una decisión decisiva: expandirse sin perder identidad.
+</p>
+
+</div>
+
+<!-- =========================
+1997
+========================= -->
+
+<div class="story-block">
+
+<h2>1997 · La llegada a Salvatierra</h2>
+
+<p>
+Nace la Unidad de Estudios Superiores de Salvatierra (UNESS).
+</p>
+
+<p>
+No es expansión: es necesidad social.
+</p>
+
+</div>
+
+<div class="story-block media">
+<img src="img/salvatierra1.jpg">
+</div>
+
+<!-- =========================
+CONSTRUCCIÓN
+========================= -->
+
+<div class="story-block highlight">
+
+<h2>Un inicio sin condiciones</h2>
+
+<p>
+Sin infraestructura, sin recursos suficientes… pero con voluntad.
+</p>
+
+</div>
+
+<!-- =========================
+COMUNIDAD
+========================= -->
+
+<div class="story-block">
+
+<h2>Construir desde la carencia</h2>
+
+<p>
+Colaborar, adaptarse, innovar y comprometerse.
+</p>
+
+</div>
+
+<!-- =========================
+FORMACIÓN
+========================= -->
+
+<div class="story-block cinematic">
+
+<p>La Universidad no se recibió hecha</p>
+<p>Se construyó en el camino</p>
+
+</div>
+
+<!-- =========================
+CRECIMIENTO
+========================= -->
+
+<div class="story-block">
+
+<h2>Una comunidad en formación</h2>
+
+<p>
+Docentes, estudiantes y administrativos construyen el proyecto.
+</p>
+
+</div>
+
+<!-- =========================
+INTEGRACIÓN
+========================= -->
+
+<div class="story-block highlight">
+
+<h2>Más que crecimiento: integración</h2>
+
+<p>
+Celaya y Salvatierra se unen en un modelo de Campus.
+</p>
+
+</div>
+
+<!-- =========================
+DIVISIÓN
+========================= -->
+
+<div class="story-block">
+
+<h2>El nacimiento de la División</h2>
+
+<p>
+Ciencias Sociales y Administrativas reúne décadas de historia.
+</p>
+
+</div>
+
+<!-- =========================
+RIESGO
+========================= -->
+
+<div class="story-block cinematic">
+
+<p>Crecer también es riesgo</p>
+<p>La cercanía puede diluirse</p>
+
+</div>
+
+<!-- =========================
+MEMORIA
+========================= -->
+
+<div class="story-block highlight">
+
+<h2>La memoria como ancla</h2>
+
+<p>
+Recordar es identidad.
+</p>
+
+</div>
+
+<!-- =========================
+DON CARLOS
+========================= -->
+
+<div class="story-block cinematic">
+
+<p>“Enamórense de su Universidad…”</p>
+
+</div>
+
+<div class="story-block highlight">
+
+<p>
+Don Carlos representa la memoria viva de la institución.
+</p>
+
+</div>
+
+<!-- =========================
+CIERRE
+========================= -->
+
+<div class="story-block highlight">
+
+<h2>Cierre del capítulo</h2>
+
+<p>
+La Universidad no es estructura: es historia compartida.
+</p>
+
+<p>
+Y sigue viva mientras alguien la recuerde.
+</p>
+
+</div>
+
+<!-- Navegación UX -->
+<div class="chapter-nav">
+	<a href="capitulo5.html">← Capítulo V</a>
+    <a href="index.html">🏠 Timeline</a>
+	<a href="epilogo.html">Epílogo →</a>
+</div>
+
+<!-- cierre de container -->
+</div>
+
+<!-- Botón arriba backTop -->
+<button class="back-top" id="backTop" type="button" aria-label="Volver arriba" title="Volver arriba">    ↑ </button>
+
+<!-- inmersión ambiental -->
+<audio id="paperSound" preload="auto">
+    <source src="audio/vueltadepagina.mp3" type="audio/mpeg">
+    Tu navegador no soporta elementos de audio.
+</audio>
+
+<script>
+
+// =========================
+// ANIMACIÓN SCROLL
+// =========================
+
+const blocks = document.querySelectorAll('.story-block');
+const paperSound = document.getElementById("paperSound");
+let played = false;
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+
+            if(!played){
+                paperSound.play().catch(()=>{});
+                played = true;
+            }
+        }
+    });
+},{
+    threshold:0.25
+});
+
+blocks.forEach(b=>observer.observe(b));
+
+/* Botón arriba Backtop*/
+const backTop = document.getElementById("backTop");
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 400){
+        backTop.style.display = "block";
+    }else{
+        backTop.style.display = "none";
+    }
+});
+backTop.addEventListener("click", () => {
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+});
+
+
+</script>
+
+</body>
+</html>

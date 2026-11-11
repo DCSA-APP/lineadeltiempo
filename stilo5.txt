@@ -1,0 +1,158 @@
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background:#f4f1ea;
+    color:#333;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width:900px;
+    margin:80px auto;
+    padding:30px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
+
+h1{ color:#22508e; font-size:34px; margin-bottom:10px; }
+h2{ color:#a2915F; margin-top:45px; }
+h3{ color:#555; font-weight:400; }
+
+p{ line-height:1.8; }
+
+.big-text{
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* =========================
+   CAPÍTULO LABEL
+========================= */
+
+.chapter-title{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+}
+
+/* =========================
+   BLOQUES ANIMADOS
+========================= */
+
+.story-block{
+    margin:85px 0;
+    opacity:0;
+    transform:translateY(45px);
+    transition:0.9s ease;
+}
+
+.story-block.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+.highlight{
+    background:rgba(162,145,95,0.12);
+    padding:25px;
+    border-left:5px solid #a2915F;
+    border-radius:6px;
+}
+
+/* =========================
+   CINEMATIC
+========================= */
+
+.cinematic{
+    background:#111;
+    color:#fff;
+    padding:70px 30px;
+    text-align:center;
+    border-radius:10px;
+}
+
+/* =========================
+   MEDIA
+========================= */
+
+.media img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* =========================
+   NAV
+========================= */
+
+.chapter-nav{
+    margin-top:70px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.chapter-nav a{
+    text-decoration:none;
+    background:#22508e;
+    color:#fff;
+    padding:10px 15px;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.chapter-nav a:hover{
+    background:#1a3e6b;
+}
+
+
+/* =========================================
+   Botón arriba Backtop
+========================================= */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #a2915F;
+    outline-offset: 4px;
+}
+.back-top {
+    position: fixed !important;
+    right: clamp(16px, 2.5vw, 30px) !important;
+    bottom: clamp(16px, 2.5vw, 30px) !important;
+    z-index: 9999 !important;
+    display: none;
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0 !important;
+    border: 1px solid rgba(255,255,255,.35) !important;
+    border-radius: 50% !important;
+    background: #22508e !important;
+    color: #fff !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.22) !important;
+    font: 700 23px/1 Arial, sans-serif !important;
+    cursor: pointer;
+    opacity: .96;
+    transition: transform .22s ease, background-color .22s ease, box-shadow .22s ease;
+}
+.back-top:hover {
+    background: #a2915F !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.25) !important;
+}
+</style>

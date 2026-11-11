@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Capítulo IV - ESCACE</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+<style>
+/* =========================================
+   BASE
+========================================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background:#f4f1ea;
+    color:#333;
+}
+
+.container{
+    max-width:900px;
+    margin:80px auto;
+    padding:30px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+    color:#22508e;
+    font-size:34px;
+}
+
+h2{
+    color:#a2915F;
+    margin-top:50px;
+}
+
+h3{
+    color:#555;
+    font-weight:400;
+}
+
+p{
+    line-height:1.8;
+}
+
+.big-text{
+    font-size:20px;
+    line-height:1.8;
+}
+
+.chapter-title{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+}
+
+
+/* =========================================
+   ANIMACIÓN
+========================================= */
+
+.story-block{
+    margin:85px 0;
+    opacity:0;
+    transform:translateY(60px) scale(0.98);
+    filter:blur(6px);
+    transition:1s ease;
+}
+
+.story-block.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+}
+
+
+/* =========================================
+   DESTACADOS
+========================================= */
+
+.highlight{
+    background:rgba(162,145,95,0.12);
+    padding:25px;
+    border-left:5px solid #a2915F;
+    border-radius:6px;
+}
+
+
+/* =========================================
+   BLOQUES CINEMATOGRÁFICOS
+========================================= */
+
+.cinematic{
+    background:#111;
+    color:#fff;
+    padding:80px 30px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.cinematic p{
+    font-size:20px;
+    letter-spacing:1px;
+}
+
+
+/* =========================================
+   MEDIOS
+========================================= */
+
+.media-block{
+    margin:40px 0;
+}
+
+.media-block img,
+.media-block video{
+    width:100%;
+    border-radius:10px;
+    transition:0.5s;
+}
+
+.media-block img:hover,
+.media-block video:hover{
+    transform:scale(1.02);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+    height:70vh;
+    background:url('img/hero-cap3.webp') center/cover no-repeat;
+    position:relative;
+    border-radius:10px;
+    margin-bottom:60px;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    border-radius:10px;
+}
+
+.hero-text{
+    position:absolute;
+    bottom:40px;
+    left:40px;
+    color:white;
+    z-index:2;
+}
+
+.hero-text h1{
+    color:white;
+    margin:0;
+}
+
+
+/* =========================================
+   NAVEGACIÓN SUPERIOR
+========================================= */
+
+.top-bar{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:999;
+}
+
+.top-bar a{
+    background:#22508e;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.top-bar a:hover{
+    background:#1b3f70;
+    transform:translateY(-2px);
+}
+
+
+/* =========================================
+   BOTÓN ARRIBA
+========================================= */
+
+.back-top{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:#a2915F;
+    color:white;
+    border:none;
+    padding:15px 18px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+    display:none;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    z-index:999;
+}
+
+.back-top:hover{
+    transform:scale(1.1);
+}
+
+
+/* =========================================
+   CARRUSEL
+========================================= */
+
+.slider{
+    position:relative;
+    overflow:hidden;
+    max-width:900px;
+    margin:30px auto;
+    background:#111;
+    border-radius:10px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.18);
+}
+
+.slides{
+    display:flex;
+    transition:transform .55s ease;
+}
+
+.slides img{
+    width:100%;
+    flex-shrink:0;
+    display:block;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+.prev,
+.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.55);
+    color:#fff;
+    border:none;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:22px;
+    z-index:5;
+    transition:.3s;
+}
+
+.prev:hover,
+.next:hover{
+    background:#22508e;
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+
+
+/* =========================================
+   PUNTOS
+========================================= */
+
+.dots{
+    text-align:center;
+    padding:14px 10px 18px;
+    background:#111;
+}
+
+.dot{
+    display:inline-block;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#777;
+    margin:4px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dot.active{
+    background:#a2915F;
+    transform:scale(1.35);
+}
+
+
+/* =========================================
+   CONTADOR DE ARCHIVO
+========================================= */
+
+.archive-counter{
+    text-align:center;
+    margin-top:15px;
+    font-size:13px;
+    letter-spacing:2px;
+    color:#777;
+    text-transform:uppercase;
+}
+
+
+/* =========================================
+   BLOQUE DE ARCHIVO VISUAL
+========================================= */
+
+.archive-intro{
+    text-align:center;
+    padding:20px 20px 10px;
+}
+
+.archive-intro h2{
+    margin-top:10px;
+    font-size:30px;
+}
+
+.archive-intro p{
+    max-width:720px;
+    margin:15px auto;
+    font-size:18px;
+}
+
+.archive-label{
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+}
+
+
+/* =========================================
+   TESTIMONIO
+========================================= */
+
+.testimony{
+    background:#111;
+    color:#fff;
+    padding:50px 30px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.testimony-label{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+    margin-bottom:15px;
+}
+
+.testimony h2{
+    color:#fff;
+    margin-top:10px;
+}
+
+.testimony p{
+    color:#ddd;
+    max-width:700px;
+    margin:15px auto;
+}
+
+.testimony video{
+    width:100%;
+    margin-top:30px;
+    border-radius:8px;
+}
+
+
+/* =========================================
+   CIERRE GENERACIONAL
+========================================= */
+
+.generation-video{
+    background:#111;
+    color:white;
+    padding:60px 30px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.generation-video .chapter-title{
+    color:#a2915F;
+}
+
+.generation-video h2{
+    color:white;
+    margin-top:15px;
+}
+
+.generation-video p{
+    color:#ccc;
+    max-width:700px;
+    margin:15px auto;
+}
+
+.generation-video video{
+    width:100%;
+    margin-top:30px;
+    border-radius:8px;
+}
+
+
+/* =========================================
+   NAVEGACIÓN DE CAPÍTULOS
+========================================= */
+
+.chapter-nav{
+    margin-top:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.chapter-nav a{
+    text-decoration:none;
+    background:#22508e;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:600px){
+
+    .container{
+        margin:30px 10px;
+        padding:20px;
+    }
+
+    .hero{
+        height:55vh;
+    }
+
+    .hero-text{
+        left:25px;
+        bottom:25px;
+    }
+
+    .hero-text h1{
+        font-size:28px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    .big-text{
+        font-size:18px;
+    }
+
+    .prev,
+    .next{
+        width:38px;
+        height:38px;
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class="hero">
+    <div class="hero-text">
+        <h1>CAPÍTULO IV</h1>
+        <p>1948-2001 ESCACE</p>
+		<p>Escuela Superior de Contaduria y Administración de Celaya</p>
+    </div>
+</div>
+<div class="top-bar">
+    <a href="index.html">← Timeline</a>
+</div>
+
+<div class="story-block visible">
+
+<div class="story-block highlight">
+    Por primera vez, la contaduría y la administración tienen un espacio propio.
+</div>
+
+<p class="big-text">
+Hay momentos en los que una institución deja de crecer solo en número y comienza a crecer en identidad.
+Este periodo es uno de ellos.
+</p>
+</div>
+
+<div class="story-block media">
+<img src="img/ESCACE.webp" alt="ESCACE antiguo edificio">
+</div>
+
+<div class="story-block">
+<h2>1973 · El nacimiento de ESCACE</h2>
+
+<p>
+La separación entre la Escuela Preparatoria y la Escuela de Comercio y Administración marca un punto de inflexión.
+</p>
+
+<p>
+Nace la Escuela Superior de Contaduria y Administración de Celaya: ESCACE.
+</p>
+</div>
+
+<div class="gallery story-block">
+<img src="img/cap4-intro1.webp">
+<img src="img/cap4-intro2.webp">
+<img src="img/cap4-intro3.webp">
+</div>
+
+<div class="highlight story-block">
+<div class="big-text">
+No era una reorganización. Era el reconocimiento de una identidad propia.
+</div>
+</div>
+
+<div class="story-block cinematic">
+<p>El Bajío crece</p>
+<p>La industria avanza</p>
+<p>La educación responde</p>
+</div>
+
+<div class="gallery story-block">
+<img src="img/cap4-intro-edif1.webp">
+<img src="img/cap4-intro-edif2.webp">
+<img src="img/cap4-intro-edif3.webp">
+</div>
+
+<div class="media story-block">
+<img src="img/cap4-intro-edif4.webp">
+</div>
+
+<div class="highlight story-block">
+<div class="big-text">
+El espacio físico también construye identidad.
+</div>
+</div>
+
+<div class="story-block">
+<h2>Crecimiento académico</h2>
+<p>Se amplían programas, infraestructura y matrícula.</p>
+</div>
+
+<div class="gallery story-block">
+<img src="img/cap4-cres-01.webp">
+<img src="img/cap4-cres-02.webp">
+<img src="img/cap4-cres-03.webp">
+</div>
+
+<div class="story-block cinematic">
+<p>La Escuela evoluciona</p>
+<p>La identidad se consolida</p>
+<p>Nace la Facultad</p>
+</div>
+
+<div class="story-block highlight">
+<h2>Cierre del capítulo</h2>
+
+<p>Entre 1973 y 2000, ESCACE se convierte en una institución consolidada.</p>
+<p>Pero su esencia permanece: la identidad.</p>
+</div>
+
+
+<div class="story-block testimony">
+
+    <div class="testimony-label">
+        Una presencia que permanece
+    </div>
+
+    <h2>
+        "Don Carlos representa más que una trayectoria: representa una forma de ser universitario."
+    </h2>
+
+    <p>
+        Para aquellos entonces, formaba parte del Consejo General Universitario y velaba por el futuro de la institución.
+    </p>
+
+    <video controls>
+
+        <source src="vid/resumen_escace.mp4" type="video/mp4">
+
+        Tu navegador no soporta la reproducción de video.
+
+    </video>
+
+</div>
+
+
+<div class="chapter-nav">
+    <a href="capitulo3.html">← Capítulo III</a>
+    <a href="capitulo5.html">Capítulo V →</a>
+</div>
+
+</div>
+
+<button class="back-top" id="backTop">↑</button>
+
+<audio id="paperSound">
+    <source src="audio/page-flip.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const blocks = document.querySelectorAll('.story-block');
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        }
+    });
+},{threshold:0.15});
+
+blocks.forEach(b=>observer.observe(b));
+
+const backTop=document.getElementById("backTop");
+
+window.addEventListener("scroll",()=>{
+    if(window.scrollY>400){
+        backTop.style.display="block";
+    }else{
+        backTop.style.display="none";
+    }
+});
+
+backTop.addEventListener("click",()=>{
+    window.scrollTo({top:0,behavior:'smooth'});
+});
+
+const sound=document.getElementById("paperSound");
+document.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        sound.play();
+    });
+});
+</script>
+
+</body>
+</html>

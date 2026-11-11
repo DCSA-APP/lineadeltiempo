@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulo I - Raíces de una tradición educativa</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link rel="stylesheet" href="lineadeltiempo.css">
+</head>
+
+<body>
+<div class="container">
+	
+		<!-- ============ HERO ============== -->
+	<div class="hero">
+		<div class="hero-text">
+		<h1>Raíces de una tradición educativa</h1>
+		<p>1732–1870 · Origen de una identidad que permanece</p>
+		</div>
+	</div>
+	
+	<!-- ============ INTRODUCCIÓN ============== -->
+	<div class="story-block visible">
+	<div class="chapter-title">CAPÍTULO I</div> <p class="big-text"> Antes de que existieran aulas como hoy las conocemos, ya había en Guanajuato una inquietud constante: formar, acompañar y construir comunidad a través del conocimiento.</p> <p>Esa inquietud no surgió de manera repentina. Fue tomando forma lentamente en espacios donde la enseñanza era un acto profundamente humano.</p>
+	</div>
+
+	<!-- ============ Contexto ============== -->
+	<div class="story-block photo-frame">
+		<img src="img/img01.webp" alt="Contexto histórico Guanajuato">
+		<div class="photo-caption"><strong>Contexto histórico de Guanajuato</strong>Vista histórica relacionada con los primeros espacios de formación educativa en Guanajuato.</div>
+	</div>
+
+	<div class="story-block">
+		<h2>El origen: Hospicio de la Santísima Trinidad (1732)</h2>
+		<p>Se establece el Hospicio de la Santísima Trinidad como punto de partida de la tradición educativa en Guanajuato.</p>
+		<p>Más que una institución, representaba una forma de enseñanza vinculada con el acompañamiento social y moral.</p>
+	</div>
+
+	<div class="story-block highlight">
+		<div class="big-text">Educar no solo como instrucción, sino como formación integral de la persona.</div>
+	</div>
+
+	<div class="story-block photo-frame">
+		<img src="img/hospicio.webp" alt="Hospicio de la Santísima Trinidad">
+		<div class="photo-caption"><strong>Hospicio de la Santísima Trinidad</strong>Guanajuato, siglo XVIII. Uno de los espacios vinculados con los primeros antecedentes de la tradición educativa.</div>
+	</div>
+
+	<div class="story-block">
+		<h2>Los Reales Colegios (1744–1798)</h2> <p>La educación adquiere estructura y permanencia bajo la influencia de la Nueva España.</p>
+	</div>
+
+	<div class="story-block highlight">
+		<div class="big-text">La enseñanza adquiría forma, pero también identidad.	</div>
+	</div>
+	
+	<!-- ============ SalazaryGarcia ============== -->
+	<section class="story-block cinematic-video"> <div class="story-block media-block"> <video controls><source src="vid/salazarygarcia.mp4"></video> </div> </section>
+
+	<div class="story-block cinematic">
+		<p>México cambia.</p>
+		<p>La educación también.</p>
+	</div>
+
+	<div class="story-block">
+		<h2>La transformación tras la Independencia (1828–1870)</h2>
+		<p>Se consolida el Colegio del Estado, marcando un cambio de sentido en la educación.</p>
+	</div>
+
+	<div class="story-block highlight">
+		<h2>Es un cambio de sentido</h2>
+		<p>La educación se orienta hacia la formación de ciudadanos y pensamiento crítico.</p>
+	</div>
+
+	<div class="story-block cinematic">
+		<p>La cercanía entre quienes enseñan y quienes aprenden</p>
+		<p>El sentido de comunidad</p>
+		<p>La formación con propósito humano</p>
+		<p>La permanencia de valores</p>
+	</div>
+
+	<div class="story-block">
+		<h2>Una semilla que permanece</h2>
+		<p>Mucho antes de Facultades o Campus, ya existía una comunidad educativa en formación.</p>
+	</div>
+
+	<div class="story-block cinematic">
+		<p>Se adapta</p>
+		<p>Se transforma</p>
+		<p>Se traslada</p>
+		<br>
+		<h2>Entre ellos: Celaya</h2>
+	</div>
+
+	<div class="story-block media-block">
+		<video controls>  <source src="vid/brevehistoria.mp4"> </video>
+	</div>
+
+	<div class="story-block highlight">
+		<h2>Cierre del capítulo</h2>
+		<p>Lo que aquí inicia no es solo una cronología, sino el origen de una identidad educativa.</p>
+		<p>Algunas historias son institucionales. Otras profundamente humanas.</p>
+	</div>
+
+	<!-- Navegación UX -->
+	<div class="chapter-nav">
+		<a href="index.html">🏠 Timeline</a> 
+		<a href="capitulo2.html">Capítulo II →</a>
+	</div>
+
+<!-- cierre de container -->
+</div>
+
+	<!-- Botón arriba backTop -->
+	<button class="back-top" id="backTop" type="button" aria-label="Volver arriba" title="Volver arriba">    ↑ </button>
+
+	<!-- inmersión ambiental -->
+	<audio id="paperSound" preload="auto">
+		<source src="audio/vueltadepagina.mp3" type="audio/mpeg">
+		Tu navegador no soporta elementos de audio.
+	</audio>
+
+
+<script>
+	const blocks = document.querySelectorAll('.story-block');
+	const paperSound = document.getElementById("paperSound");
+	let played = false;
+
+	const observer = new IntersectionObserver(entries=>{
+		entries.forEach(entry=>{
+			if(entry.isIntersecting){
+				entry.target.classList.add('visible');
+
+				if(!played){
+					paperSound.play().catch(()=>{});
+					played = true;
+				}
+			}
+		});
+	},{
+		threshold:0.25
+	});
+
+	blocks.forEach(b=>observer.observe(b));
+
+
+	/* Botón arriba Backtop*/
+	const backTop = document.getElementById("backTop");
+	window.addEventListener("scroll", () => {
+		if(window.scrollY > 400){
+			backTop.style.display = "block";
+		}else{
+			backTop.style.display = "none";
+		}
+	});
+	backTop.addEventListener("click", () => {
+		window.scrollTo({
+			top:0,
+			behavior:'smooth'
+		});
+	});
+</script>
+
+</body>
+</html>

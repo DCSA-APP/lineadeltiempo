@@ -1,0 +1,872 @@
+<style>
+
+/* Root
+:root {
+    --azul: #22508e;
+    --dorado: #a2915f;
+    --crema: #f4f1ea;
+    --texto: #333333;
+    --ancho-contenido: 900px;
+}
+
+html { scroll-behavior: smooth; }
+:root {
+    --timeline-blue: #22508e;
+    --timeline-gold: #a2915F;
+    --timeline-paper: #f4f1ea;
+    --timeline-ink: #333333;
+}
+
+/* BASE: mantener la composición actual */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--crema);
+    color: var(--texto);
+}
+
+/* CONTENEDOR: no cambiar sus proporciones ni su padding
+   sin revisar primero la composición de la página */
+.container {
+    max-width: var(--ancho-contenido);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TÍTULOS: unificar la paleta, no sus tamaños particulares */
+h1 {
+    color: var(--azul);
+}
+
+h2 {
+    color: var(--dorado);
+}
+
+
+/* IMÁGENES: protección general contra desbordamientos.
+   No definir aquí height, object-fit ni aspect-ratio. */
+img {
+    max-width: 100%;
+}
+
+/* GALERÍAS Y LIGHTBOX:
+   conservar íntegramente sus reglas originales.
+   No sobrescribir:
+   .gallery img
+   .gallery-wide
+   .slider
+   .slides
+   .photo-frame img
+   .lightbox
+   .lightbox img
+   .lightbox-close
+   .lightbox-prev
+   .lightbox-next
+*/
+
+/* VIDEO: no cambiar la proporción ni el encuadre del archivo */
+video {
+    max-width: 100%;
+}
+
+
+/* ACCESIBILIDAD: respetar la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+
+/* =========================================
+   BASE
+========================================= */
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+*, *::before, *::after{
+    box-sizing:border-box;
+}
+
+/* =========================================
+   GALERÍAS · ARCHIVO
+   ========================================= */
+
+.gallery{
+    width:100%;
+    max-width:100%;
+    margin:50px 0;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+    overflow:hidden;
+}
+
+.gallery img{
+    width:100%;
+    max-width:100%;
+    height:220px;
+    display:block;
+    object-fit:cover;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    transition:transform .35s ease, box-shadow .35s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.025);
+    box-shadow:0 12px 28px rgba(0,0,0,.18);
+}
+
+.gallery .gallery-wide{
+    grid-column:span 2;
+}
+
+.archive-gallery{
+    margin-top:30px;
+}
+
+.archive-gallery img{
+    height:240px;
+    object-fit:cover;
+}
+
+/* =========================================
+   MURO DE DIRECTORES · ESCACE
+   ========================================= */
+
+.directors-wall {
+    background: #111;
+    color: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .25);
+}
+
+.directors-wall h2 {
+    color: #fff;
+}
+
+.directors-wall p {
+    color: #ccc;
+}
+
+.directors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.director-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    min-width: 0;
+    min-height: 110px;
+    padding: 20px 16px;
+    background: #181818;
+    color: #fff;
+    border: 1px solid rgba(162, 145, 95, .35);
+    border-radius: 8px;
+    transition: background .3s ease,
+                color .3s ease,
+                transform .3s ease,
+                box-shadow .3s ease;
+}
+
+.director-card strong {
+    color: #fff;
+    line-height: 1.5;
+}
+
+.director-card span {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.director-card:hover {
+    background: #a2915f;
+    color: #111;
+    border-color: #a2915f;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(162, 145, 95, .3);
+}
+
+.director-card:hover strong {
+    color: #111;
+}
+
+.director-card:hover span {
+    color: #222;
+}
+
+@media (max-width: 700px) {
+    .directors-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 420px) {
+    .directors-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tarjetas */
+
+.director-card{
+    background:#181818;
+    color:#fff;
+    border:1px solid rgba(162,145,95,.25);
+}
+
+/* Al pasar el cursor */
+
+.director-card:hover{
+    background:#a2915F !important;
+    color:#111 !important;
+    border-color:#a2915F !important;
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(162,145,95,.30);
+}
+
+.director-card:hover strong{
+    color:#111 !important;
+}
+
+.director-card:hover span{
+    color:#222 !important;
+}
+
+.archive-section{
+    margin:75px 0 30px;
+    padding:42px 28px;
+    background:#f4f1ea;
+    border:1px solid rgba(162,145,95,.28);
+    border-radius:10px;
+}
+
+.archive-section h2{
+    margin-top:10px;
+}
+
+.archive-section .archive-lead{
+    max-width:720px;
+    margin:0 auto 28px;
+    text-align:center;
+}
+
+.archive-video{
+    width:100%;
+    max-width:820px;
+    margin:30px auto 0;
+    display:block;
+    border-radius:8px;
+    box-shadow:0 12px 28px rgba(0,0,0,.18);
+}
+
+.archive-caption{
+    margin-top:10px;
+    text-align:center;
+    font-size:12px;
+    color:#777;
+    letter-spacing:.5px;
+}
+
+@media(max-width:700px){
+    .gallery,
+    .directors-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery .gallery-wide{
+        grid-column:auto;
+    }
+
+    .gallery img,
+    .archive-gallery img{
+        height:auto;
+        max-height:320px;
+    }
+
+    .directors-wall,
+    .archive-section{
+        padding:28px 18px;
+    }
+}
+
+
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background:#f4f1ea;
+    color:#333;
+}
+
+.container{
+    max-width:900px;
+    margin:80px auto;
+    padding:30px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+    color:#22508e;
+    font-size:34px;
+}
+
+h2{
+    color:#a2915F;
+    margin-top:50px;
+}
+
+h3{
+    color:#555;
+    font-weight:400;
+}
+
+p{
+    line-height:1.8;
+}
+
+.big-text{
+    font-size:20px;
+    line-height:1.8;
+}
+
+.chapter-title{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+}
+
+
+/* =========================================
+   ANIMACIÓN
+========================================= */
+
+.story-block{
+    margin:85px 0;
+    opacity:0;
+    transform:translateY(60px) scale(0.98);
+    filter:blur(6px);
+    transition:1s ease;
+}
+
+.story-block.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+}
+
+
+/* =========================================
+   DESTACADOS
+========================================= */
+
+.highlight{
+    background:rgba(162,145,95,0.12);
+    padding:25px;
+    border-left:5px solid #a2915F;
+    border-radius:6px;
+}
+
+
+/* =========================================
+   BLOQUES CINEMATOGRÁFICOS
+========================================= */
+
+.cinematic{
+    background:#111;
+    color:#fff;
+    padding:80px 30px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.cinematic p{
+    font-size:20px;
+    letter-spacing:1px;
+}
+
+
+/* =========================================
+   MEDIOS
+========================================= */
+
+.media-block{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+}
+
+.media-block img{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    object-fit:contain;
+    border-radius:10px;
+}
+.media-block img:hover,
+.media-block video:hover{
+    transform:scale(1.02);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+    height:70vh;
+    background:url('img/hero-cap4.webp') center/cover no-repeat;
+    position:relative;
+    border-radius:10px;
+    margin-bottom:60px;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    border-radius:10px;
+}
+
+.hero-text{
+    position:absolute;
+    bottom:40px;
+    left:40px;
+    color:white;
+    z-index:2;
+}
+
+.hero-text h1{
+    color:white;
+    margin:0;
+}
+/* =========================================
+   LIGHTBOX · GALERÍA DE ARCHIVO
+   ========================================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.88);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+    padding:30px;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:90vw;
+    max-height:85vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:6px;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+.lightbox-close{
+    position:absolute;
+    top:25px;
+    right:30px;
+    color:#fff;
+    font-size:38px;
+    line-height:1;
+    cursor:pointer;
+    z-index:2002;
+    transition:.3s;
+}
+
+.lightbox-close:hover{
+    color:#a2915F;
+    transform:scale(1.1);
+}
+
+.lightbox-prev,
+.lightbox-next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    background:#a2915F;
+    color:#111;
+    font-size:25px;
+    cursor:pointer;
+    z-index:2002;
+    transition:.3s;
+}
+
+.lightbox-prev{
+    left:25px;
+}
+
+.lightbox-next{
+    right:25px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover{
+    background:#fff;
+    transform:translateY(-50%) scale(1.08);
+}
+
+@media(max-width:600px){
+
+    .lightbox{
+        padding:15px;
+    }
+
+    .lightbox img{
+        max-width:94vw;
+        max-height:78vh;
+    }
+
+    .lightbox-prev,
+    .lightbox-next{
+        width:40px;
+        height:40px;
+        font-size:20px;
+    }
+
+    .lightbox-prev{
+        left:10px;
+    }
+
+    .lightbox-next{
+        right:10px;
+    }
+
+}
+
+
+/* =========================================
+   CARRUSEL
+========================================= */
+
+.slider{
+    position:relative;
+    overflow:hidden;
+    max-width:900px;
+    margin:30px auto;
+    background:#111;
+    border-radius:10px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.18);
+}
+
+.slides{
+    display:flex;
+    transition:transform .55s ease;
+}
+
+.slides img{
+    width:100%;
+    flex-shrink:0;
+    display:block;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+.prev,
+.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.55);
+    color:#fff;
+    border:none;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:22px;
+    z-index:5;
+    transition:.3s;
+}
+
+.prev:hover,
+.next:hover{
+    background:#22508e;
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+
+
+/* =========================================
+   PUNTOS
+========================================= */
+
+.dots{
+    text-align:center;
+    padding:14px 10px 18px;
+    background:#111;
+}
+
+.dot{
+    display:inline-block;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#777;
+    margin:4px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dot.active{
+    background:#a2915F;
+    transform:scale(1.35);
+}
+
+
+/* =========================================
+   CONTADOR DE ARCHIVO
+========================================= */
+
+.archive-counter{
+    text-align:center;
+    margin-top:15px;
+    font-size:13px;
+    letter-spacing:2px;
+    color:#777;
+    text-transform:uppercase;
+}
+
+
+/* =========================================
+   BLOQUE DE ARCHIVO VISUAL
+========================================= */
+
+.archive-intro{
+    text-align:center;
+    padding:20px 20px 10px;
+}
+
+.archive-intro h2{
+    margin-top:10px;
+    font-size:30px;
+}
+
+.archive-intro p{
+    max-width:720px;
+    margin:15px auto;
+    font-size:18px;
+}
+
+.archive-label{
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+}
+
+
+/* =========================================
+   TESTIMONIO
+========================================= */
+
+.testimony{
+    background:#111;
+    color:#fff;
+    padding:50px 30px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.testimony-label{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+    margin-bottom:15px;
+}
+
+.testimony h2{
+    color:#fff;
+    margin-top:10px;
+}
+
+.testimony p{
+    color:#ddd;
+    max-width:700px;
+    margin:15px auto;
+}
+
+.testimony video{
+    width:100%;
+    margin-top:30px;
+    border-radius:8px;
+}
+
+
+/* =========================================
+   CIERRE GENERACIONAL
+========================================= */
+
+.generation-video{
+    background:#111;
+    color:white;
+    padding:60px 30px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.generation-video .chapter-title{
+    color:#a2915F;
+}
+
+.generation-video h2{
+    color:white;
+    margin-top:15px;
+}
+
+.generation-video p{
+    color:#ccc;
+    max-width:700px;
+    margin:15px auto;
+}
+
+.generation-video video{
+    width:100%;
+    margin-top:30px;
+    border-radius:8px;
+}
+
+
+/* =========================================
+   NAVEGACIÓN DE CAPÍTULOS
+========================================= */
+
+.chapter-nav{
+    margin-top:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.chapter-nav a{
+    text-decoration:none;
+    background:#22508e;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:600px){
+
+    .container{
+        margin:30px 10px;
+        padding:20px;
+    }
+
+    .hero{
+        height:55vh;
+    }
+
+    .hero-text{
+        left:25px;
+        bottom:25px;
+    }
+
+    .hero-text h1{
+        font-size:28px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    .big-text{
+        font-size:18px;
+    }
+
+    .prev,
+    .next{
+        width:38px;
+        height:38px;
+        font-size:18px;
+    }
+
+}
+/* =========================================
+   Botón arriba Backtop
+========================================= */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #a2915F;
+    outline-offset: 4px;
+}
+.back-top {
+    position: fixed !important;
+    right: clamp(16px, 2.5vw, 30px) !important;
+    bottom: clamp(16px, 2.5vw, 30px) !important;
+    z-index: 9999 !important;
+    display: none;
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0 !important;
+    border: 1px solid rgba(255,255,255,.35) !important;
+    border-radius: 50% !important;
+    background: #22508e !important;
+    color: #fff !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.22) !important;
+    font: 700 23px/1 Arial, sans-serif !important;
+    cursor: pointer;
+    opacity: .96;
+    transition: transform .22s ease, background-color .22s ease, box-shadow .22s ease;
+}
+.back-top:hover {
+    background: #a2915F !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.25) !important;
+}
+</style>

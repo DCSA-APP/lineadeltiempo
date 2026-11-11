@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Capítulo V - Enfermería Celaya</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+<style>
+html{scroll-behavior:smooth;}
+
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background:#f4f1ea;
+    color:#333;
+}
+
+/* TOP BAR */
+.top-bar{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:999;
+}
+
+.top-bar a{
+    background:#22508e;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.top-bar a:hover{
+    background:#1b3f70;
+}
+
+.container{
+    max-width:900px;
+    margin:80px auto;
+    padding:30px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{ color:#22508e; font-size:34px; }
+h2{ color:#a2915F; margin-top:40px; }
+h3{ color:#555; font-weight:400; }
+
+p{ line-height:1.8; }
+.big-text{ font-size:20px; }
+
+.chapter-title{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+}
+
+.block{
+    margin:80px 0;
+    opacity:0;
+    transform:translateY(60px) scale(0.98);
+    filter:blur(6px);
+    transition:1s ease;
+}
+
+.block.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+}
+
+.highlight{
+    background:rgba(162,145,95,0.12);
+    padding:25px;
+    border-left:5px solid #a2915F;
+    border-radius:6px;
+}
+
+.cinematic{
+    background:#111;
+    color:#fff;
+    padding:80px 30px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+.cinematic p{
+    font-size:20px;
+}
+
+.media img{
+    width:100%;
+    border-radius:10px;
+    transition:0.5s;
+}
+
+.media img:hover{
+    transform:scale(1.02);
+}
+
+.gallery{
+    display:flex;
+    gap:10px;
+}
+
+.gallery img{
+    width:33%;
+    border-radius:8px;
+    transition:0.5s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+.hospital{
+    background:#0f1720;
+    color:#fff;
+    padding:80px 30px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.audio-block{
+    margin-top:40px;
+}
+
+.audio-block audio{
+    width:100%;
+}
+
+.chapter-nav{
+    margin-top:60px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.chapter-nav a{
+    text-decoration:none;
+    background:#22508e;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.chapter-nav a:hover{
+    background:#1b3f70;
+}
+
+.back-top{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:#a2915F;
+    color:white;
+    border:none;
+    padding:15px 18px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <a href="index.html">← Timeline</a>
+</div>
+
+<div class="container">
+
+<div class="block visible">
+<div class="chapter-title">CAPÍTULO V</div>
+
+<h1>La vocación de cuidar</h1>
+<h3>La historia de Enfermería en Celaya</h3>
+
+<p class="big-text">
+Mientras una parte de la Universidad aprendía a organizar estructuras, otra aprendía a sostener la vida.
+</p>
+</div>
+
+<div class="block media">
+<img src="img/enfermeria_hero.jpg">
+</div>
+
+<div class="block">
+<h2>1939 · El inicio de una vocación</h2>
+<p>La Escuela de Enfermería inicia en la Escuela Secundaria Oficial.</p>
+</div>
+
+<div class="gallery block">
+<img src="img/enfermeria_antigua1.jpg">
+<img src="img/enfermeria_antigua2.jpg">
+<img src="img/enfermeria_antigua3.jpg">
+</div>
+
+<div class="highlight block">
+<div class="big-text">
+La educación no nace en edificios perfectos. Nace en la voluntad.
+</div>
+</div>
+
+<div class="block">
+<h2>1945 · Integración universitaria</h2>
+<p>La Escuela de Enfermería se integra a la Universidad de Guanajuato.</p>
+</div>
+
+<div class="block hospital">
+<p>Hospital Civil</p>
+<p>Hidalgo y Leandro Valle</p>
+<p>La vida como aula</p>
+</div>
+
+<div class="block highlight">
+<h2>Formarse desde la experiencia</h2>
+<p>
+La enfermería no se aprende solo en el aula.
+Se aprende en el contacto humano.
+</p>
+</div>
+
+<div class="block">
+<h2>1963 · Profesionalización</h2>
+<p>Se eleva el nivel de ingreso a secundaria.</p>
+</div>
+
+<div class="block media">
+<img src="img/mutualismo_edificio.jpg">
+</div>
+
+<div class="highlight block">
+<h2>1973–1981 · Espacio propio</h2>
+<p>La Escuela de Enfermería obtiene su propio edificio en Mutualismo.</p>
+</div>
+
+<div class="block cinematic">
+<p>Más ciencia</p>
+<p>Más formación</p>
+<p>Más humanidad</p>
+</div>
+
+<div class="block highlight">
+<h2>1981 · Licenciatura en Enfermería y Obstetricia</h2>
+<p>La enfermería se consolida como carrera universitaria.</p>
+</div>
+
+<div class="block cinematic">
+<p>Administrar</p>
+<p>Cuidar</p>
+<p>Formar</p>
+</div>
+
+<div class="block highlight">
+<h2>Un eco compartido</h2>
+<p>La Universidad se vive en comunidad. No en áreas separadas.</p>
+</div>
+
+<div class="block highlight">
+<h2>Cierre del capítulo</h2>
+<p>La enfermería no es un área paralela. Es un corazón dentro de la Universidad.</p>
+<p>No hay comunidad sin humanidad.</p>
+</div>
+
+<div class="block audio-block">
+<audio controls>
+<source src="audio/capitulo5.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="chapter-nav">
+    <a href="capitulo4.html">← Capítulo IV</a>
+    <a href="capitulo6.html">Capítulo VI →</a>
+</div>
+
+</div>
+
+<button class="back-top" id="backTop">↑</button>
+
+<audio id="paperSound">
+    <source src="audio/page-flip.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const blocks = document.querySelectorAll('.block');
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add('visible');
+        }
+    });
+},{threshold:0.15});
+
+blocks.forEach(b=>observer.observe(b));
+
+const backTop=document.getElementById("backTop");
+
+window.addEventListener("scroll",()=>{
+    if(window.scrollY>400){
+        backTop.style.display="block";
+    } else {
+        backTop.style.display="none";
+    }
+});
+
+backTop.addEventListener("click",()=>{
+    window.scrollTo({top:0,behavior:'smooth'});
+});
+
+const sound=document.getElementById("paperSound");
+document.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        sound.play();
+    });
+});
+</script>
+
+</body>
+</html>

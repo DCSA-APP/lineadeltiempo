@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raíces de una tradición educativa</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background:#f4f1ea;
+    color:#333;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    height:100vh;
+    background-image:url('img/hero-principal.jpg');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    position:relative;
+}
+
+.hero-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin:0;
+    letter-spacing:1px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+    opacity:0.9;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    max-width:900px;
+    margin:80px auto;
+    padding:0 20px;
+    text-align:center;
+}
+
+.intro h2{
+    color:#22508e;
+    margin-bottom:10px;
+}
+
+.intro p{
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* =========================
+   CAPÍTULOS (PORTAL)
+========================= */
+
+.chapters{
+    max-width:1000px;
+    margin:60px auto;
+    padding:0 20px;
+}
+
+.chapter{
+    display:flex;
+    gap:20px;
+    align-items:center;
+
+    background:white;
+    border-radius:12px;
+    margin:30px 0;
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+    transition:0.3s ease;
+}
+
+.chapter:hover{
+    transform:translateY(-5px);
+}
+
+.chapter img{
+    width:180px;
+    height:140px;
+    object-fit:cover;
+}
+
+.chapter-content{
+    padding:20px;
+    flex:1;
+}
+
+.chapter-title{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a2915F;
+}
+
+.chapter h3{
+    margin:5px 0;
+    color:#22508e;
+}
+
+.chapter p{
+    margin:5px 0;
+    font-size:14px;
+    line-height:1.6;
+    opacity:0.85;
+}
+
+.chapter a{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 14px;
+    background:#22508e;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    font-size:13px;
+}
+
+/* =========================
+   EPÍLOGO
+========================= */
+
+.epilogue{
+    max-width:900px;
+    margin:100px auto;
+    padding:60px 30px;
+    text-align:center;
+
+    background:#111;
+    color:white;
+    border-radius:12px;
+}
+
+.epilogue h2{
+    color:#FCD341;
+    margin-bottom:10px;
+}
+
+.epilogue p{
+    line-height:1.8;
+    opacity:0.9;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:40px;
+    font-size:13px;
+    opacity:0.6;
+}
+
+/* =========================
+   ANIMACIÓN SIMPLE
+========================= */
+
+.chapter{
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp 0.8s forwards;
+}
+
+.chapter:nth-child(1){ animation-delay:0.1s; }
+.chapter:nth-child(2){ animation-delay:0.2s; }
+.chapter:nth-child(3){ animation-delay:0.3s; }
+.chapter:nth-child(4){ animation-delay:0.4s; }
+.chapter:nth-child(5){ animation-delay:0.5s; }
+.chapter:nth-child(6){ animation-delay:0.6s; }
+.chapter:nth-child(7){ animation-delay:0.7s; }
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+    <div class="hero-overlay">
+        <h1>Raíces de una tradición educativa</h1>
+        <p>Un recorrido por la memoria del Campus Celaya-Salvatierra</p>
+        <p><strong>Homenaje a Don Carlos Martínez Inda</strong></p>
+    </div>
+</section>
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+    <h2>Memoria, identidad y comunidad</h2>
+    <p>
+        Este recorrido reúne la historia educativa que dio forma a generaciones enteras.
+        No es solo una cronología, sino una construcción viva de identidad, vocación y comunidad.
+    </p>
+</section>
+
+<!-- =========================
+     CAPÍTULOS
+========================= -->
+
+<section class="chapters">
+
+<!-- =========================
+PRÓLOGO
+========================= -->
+
+<div class="chapter">
+    <img src="img/prologo.png" alt="Prólogo">
+    <div class="chapter-content">
+
+        <div class="chapter-title">PRÓLOGO</div>
+
+        <h3>Memoria viva de una comunidad</h3>
+
+        <p>
+            Antes de los capítulos, existe la memoria.
+            Un entramado de voces, vínculos y afectos que dan origen a esta historia.
+        </p>
+
+        <a href="prologo.html">Entrar al prólogo</a>
+
+    </div>
+</div>
+
+    <div class="chapter">
+        <img src="img/hero-cap1.webp">
+        <div class="chapter-content">
+            <div class="chapter-title">CAPÍTULO I</div>
+            <h3>Raíces de una tradición educativa</h3>
+            <p>1732–1870 · El origen de una forma de entender la educación.</p>
+            <a href="capitulo1.html">Abrir capítulo</a>
+        </div>
+    </div>
+
+    <div class="chapter">
+        <img src="img/hero-cap2.webp">
+        <div class="chapter-content">
+            <div class="chapter-title">CAPÍTULO II</div>
+            <h3>Celaya: el despertar educativo</h3>
+            <p>1926–1945 · El inicio de una vocación regional.</p>
+            <a href="capitulo2.html">Abrir capítulo</a>
+        </div>
+    </div>
+
+    <div class="chapter">
+        <img src="img/hero-cap3.webp">
+        <div class="chapter-content">
+            <div class="chapter-title">CAPÍTULO III</div>
+            <h3>Profesionalización y vocación</h3>
+            <p>1933–1973 · El nacimiento de una comunidad académica.</p>
+            <a href="capitulo3.html">Abrir capítulo</a>
+        </div>
+    </div>
+
+    <div class="chapter">
+        <img src="img/hero-cap4.webp">
+        <div class="chapter-content">
+            <div class="chapter-title">CAPÍTULO IV</div>
+            <h3>De Escuela a Facultad</h3>
+            <p>1948–2001 · Consolidación de identidad académica.</p>
+            <a href="capitulo4.html">Abrir capítulo</a>
+        </div>
+    </div>
+
+    <div class="chapter">
+        <img src="img/hero-cap5.webp">
+        <div class="chapter-content">
+            <div class="chapter-title">CAPÍTULO V</div>
+            <h3>La vocación de cuidar</h3>
+            <p>Historia de Enfermería en Celaya.</p>
+            <a href="capitulo5.html">Abrir capítulo</a>
+        </div>
+    </div>
+
+    <div class="chapter">
+        <img src="img/hero-cap6.webp">
+        <div class="chapter-content">
+            <div class="chapter-title">CAPÍTULO VI</div>
+            <h3>Expansión y permanencia</h3>
+            <p>1997–Actualidad · Del territorio al sentido de comunidad.</p>
+            <a href="capitulo6.html">Abrir capítulo</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- =========================
+     EPÍLOGO
+========================= -->
+
+<section class="epilogue">
+
+    <h2>Donde siempre regresan las golondrinas</h2>
+    <h3></h3>
+    <p>
+        Hay historias que no terminan… solo cambian de forma.
+        El tiempo ha separado y reunido caminos, pero el origen permanece.
+    </p>
+
+    <p>
+        Como las golondrinas, que siempre regresan al mismo nido,
+        esta historia vuelve a su esencia: la memoria, la identidad y la comunidad.
+    </p>
+
+    <a href="epilogo.html" style="display:inline-block;margin-top:20px;padding:10px 20px;background:#FCD341;color:#111;text-decoration:none;border-radius:6px;">
+        Leer epílogo completo
+    </a>
+
+</section>
+
+<footer>
+    © 2026 Universidad de Guanajuato<p> · División de Ciencias Sociales y Administrativas<p> · Proyecto de memoria institucional · 
+</footer>
+
+</body>
+</html>
